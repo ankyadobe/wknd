@@ -1,7 +1,8 @@
 async function queryDemo() {
     const offset = 0;
     const limit = 20;
-    const api = new URL('https://main--wkndhlx--varunmitra.hlx.live/query-index.json?sheet=default');
+    const response = await fetch("/query-index.json?sheet=default&offset=0&limit=20", {});
+    
     api.searchParams.append("offset", JSON.stringify(offset));
     api.searchParams.append("limit", limit);
     const response = await fetch(api, {});
